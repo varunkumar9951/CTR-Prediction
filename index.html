@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTR Prediction</title>
+</head>
+<body>
+    <h1>Add Campaign</h1>
+    <form method="POST">
+        <label>Name:</label><input type="text" name="name"><br>
+        <label>Impressions:</label><input type="number" name="impressions"><br>
+        <label>Clicks:</label><input type="number" name="clicks"><br>
+        <label>Conversions:</label><input type="number" name="conversions"><br>
+        <label>Cost:</label><input type="text" name="cost"><br>
+        <input type="submit" value="Add Campaign">
+    </form>
+    <h2>Campaign Data</h2>
+    <ul>
+        {% for campaign in campaigns %}
+        <li>{{ campaign['name'] }} - CTR: {{ campaign['CTR (%)'] | round(2) }}%</li>
+        {% endfor %}
+    </ul>
+    {{ chart|safe }}
+    <br><a href="/predict_ctr">Go to CTR Predictor</a>
+</body>
+</html>

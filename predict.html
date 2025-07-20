@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict CTR</title>
+</head>
+<body>
+    <h1>Predict CTR</h1>
+    <form method="POST">
+        <label>Impressions:</label><input type="number" name="impressions"><br>
+        <label>Clicks:</label><input type="number" name="clicks"><br>
+        <label>Cost:</label><input type="text" name="cost"><br>
+        <input type="submit" value="Predict CTR">
+    </form>
+    {% if prediction is not none %}
+        <h2>Predicted CTR: {{ prediction }}%</h2>
+    {% endif %}
+    <br><a href="/">Back to Home</a>
+</body>
+</html>
